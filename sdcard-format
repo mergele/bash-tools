@@ -1,0 +1,7 @@
+#!/bin/bash
+umount /dev/sdc1                            # make sure it's unmounted
+mkfs.ext3 /dev/sdc1                         # format with ext3
+tune2fs -c 0 /dev/sdc1                      # disable fsck on boot
+mount /dev/sdc1 /mnt/sdcard                 # mount for file-preparation
+#cp -r /whatever/you/want/* /mnt/sdcard/    # copy something to the clean sdcard
+umount /dev/sdc1                            # unmount
